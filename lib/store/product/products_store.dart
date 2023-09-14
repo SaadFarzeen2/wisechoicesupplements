@@ -18,6 +18,7 @@ class ProductsStore = ProductsStoreBase with _$ProductsStore;
 
 abstract class ProductsStoreBase with Store {
   final String? key;
+  // erer
 
   // Request helper instance
   RequestHelper? _requestHelper;
