@@ -1,0 +1,220 @@
+name: cirilla
+description: Cirilla - Multipurpose Flutter App For Wordpress & Woocommerce
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 6.0.0
+
+environment:
+  sdk: '>=2.17.1 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.4
+  google_fonts: ^2.1.0
+
+  # Appcheap.io build in dependencies
+  ui:
+    path: ../ui
+  gutenberg_blocks:
+    path: ../gutenberg_blocks
+  awesome_drawer_bar: ^1.2.0
+  awesome_bottom_bar: ^1.2.1
+  feather_icons: ^1.2.0
+  awesome_icons: ^1.1.0
+  #calendar
+  table_calendar: ^3.0.6
+  change_app_package_name: ^1.1.0
+
+  # Wraps platform-specific persistent storage for simple data
+  shared_preferences: ^2.0.11
+  shared_preferences_web: ^2.0.2
+
+  # State-management library
+  mobx: ^2.0.5
+  flutter_mobx: ^2.0.2
+
+  # A wrapper around InheritedWidget to make them easier to use and more reusable.
+  provider: ^6.0.1
+
+  # A powerful Http client for Dart
+  dio: ^4.0.4
+
+  # A set of cryptographic hashing functions implemented in pure Dart
+  crypto: ^3.0.1
+
+  # A collection of loading indicators animated with flutter
+  flutter_spinkit: ^5.1.0
+
+  json_annotation: ^4.4.0
+
+  # Slideshow and image gallery
+  flutter_swiper:
+    git: https://github.com/AppCheap/flutter_swiper
+
+  flutter_slidable: ^1.2.0
+
+  dotted_border: ^2.0.0+1
+
+  # A Flutter plugin that provides a Google Maps widget.
+  google_maps_flutter: ^2.1.3
+  google_maps_flutter_web: ^0.3.2+1
+
+  # A Flutter plugin for launching a URL.
+  url_launcher: ^6.0.17
+
+  # Firebase
+  firebase_core: ^2.4.1
+  firebase_auth: ^4.2.5
+  firebase_messaging: ^14.2.1
+  firebase_messaging_web: ^3.2.11
+  firebase_analytics: ^10.1.0
+  firebase_database: ^10.0.9
+  firebase_dynamic_links: ^5.0.11
+
+  # A cross platform plugin for displaying local notifications.
+  flutter_local_notifications: ^13.0.0
+
+  # Package generate pin code fields with beautiful design and animations
+  pin_code_fields: ^7.3.0
+
+  # Sign In Google
+  google_sign_in: ^5.0.7
+
+  # Sign In Apple
+  sign_in_with_apple: ^4.0.0
+
+  # Sign In facebook
+  flutter_facebook_auth: ^4.0.1
+
+  # Text animations
+  animated_text_kit: ^4.2.1
+
+  # Webview flutter
+  webview_flutter: ^3.0.4
+
+  # Format date time
+  intl: ^0.17.0
+
+  # Share content
+  share: ^2.0.4
+
+  # Shimmer loading
+  shimmer: ^2.0.0
+
+  # Play audio
+  just_audio: ^0.9.28
+
+  # Run audio and video in background
+  # audio_service: ^0.18.0
+
+  # Cache image
+  cached_network_image: ^3.2.1
+
+  # A Flutter widget for rendering HTML and CSS as Flutter widgets.
+  flutter_html: ^3.0.0-alpha.5
+  flutter_html_all:
+    path: ./packages/flutter_html_all
+
+  flutter_sticky_header: ^0.6.0
+
+  html_unescape: ^2.0.0
+  collection: ^1.15.0
+  in_app_review: ^2.0.4
+
+  # Access to platform specific location services
+  geolocator: ^9.0.1
+  google_geocoding: ^0.2.0
+  image_picker: ^0.8.4+4
+
+  # Flutter Community Plus Plugins
+  device_info_plus: ^8.0.0
+
+  # Flutter Connectivity Plus Plugins
+  connectivity_plus: ^3.0.2
+
+  permission_handler: ^10.2.0
+  flutter_chat_ui: ^1.6.0
+  chewie: ^1.3.0
+  video_player: ^2.2.18
+  html: ^0.15.0
+  flutter_chat_types: ^3.4.1
+  rxdart: ^0.27.3
+  convert: ^3.0.1
+  photo_view: ^0.14.0
+  audio_session: ^0.1.6+1
+  http: ^0.13.4
+  path_provider: ^2.0.10
+  iframe_view:
+    path: ./plugins/iframe_view
+  flutter_colorpicker: ^1.0.3
+  # Code Scanner
+  flutter_barcode_scanner: ^2.0.0
+  # Payment gateway
+  payment_base:
+    path: ./packages/payment_base
+  # woo_booking
+  woo_booking:
+    path: ./packages/woo_booking
+  # Video shop
+  video_shop_flutter:
+    git:
+      url: "https://github.com/AppCheap/flutter_shopping_video.git"
+  # Chat GPT
+  chat_gpt:
+    path: ./packages/chat_gpt
+  local_auth: ^2.1.6
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  build_runner: ^2.1.5
+  mobx_codegen: ^2.0.4
+  json_serializable: ^6.1.1
+
+  # App's launcher icon
+  flutter_launcher_icons: ^0.9.1
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
+  assets:
+    - assets/lang/
+    - assets/images/
+    - assets/images/payment/
+    - google_fonts/

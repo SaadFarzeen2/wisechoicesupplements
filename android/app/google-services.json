@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1057853930792",
+    "project_id": "wisechoicesupplements-4d5c5",
+    "storage_bucket": "wisechoicesupplements-4d5c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057853930792:android:2eb58dc260b348c95e241d",
+        "android_client_info": {
+          "package_name": "com.app.wisechoicesupplements"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057853930792-gells67g981vh11g9093ealc2b29neij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOVyxHmWbdXV33ocAg1qzVJJn_h11CHBI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057853930792-gells67g981vh11g9093ealc2b29neij.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

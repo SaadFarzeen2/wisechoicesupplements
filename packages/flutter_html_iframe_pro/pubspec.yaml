@@ -1,0 +1,24 @@
+name: flutter_html_iframe
+description: This extension package allows the <iframe> tag to be rendered using the flutter_html package
+version: 3.0.0-alpha.3
+homepage: https://github.com/Sub6Resources/flutter_html
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.2.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  html: '>=0.15.0 <1.0.0'
+  flutter_html: "3.0.0-alpha.5"
+#  flutter_html:
+#    path: ../..
+
+  flutter_webview_pro: ^3.0.1+4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
