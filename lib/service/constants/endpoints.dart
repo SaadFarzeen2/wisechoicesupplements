@@ -4,10 +4,17 @@ class Endpoints {
   Endpoints._();
 
   // base url
-  static const String restUrl = String.fromEnvironment('BASE_URL', defaultValue: "${acf.baseUrl}${acf.restPrefix}");
-  static const String consumerKey = String.fromEnvironment('CONSUMER_KEY', defaultValue: acf.consumerKey);
-  static const String consumerSecret = String.fromEnvironment('CONSUMER_SECRET', defaultValue: acf.consumerSecret);
-  static const List<String> allowPathAuthenticationRestApiKeys = ['/wc/v3/', '/wc/v2/', '/wc-appointments/v1/'];
+  static const String restUrl = String.fromEnvironment('BASE_URL',
+      defaultValue: "${acf.baseUrl}${acf.restPrefix}");
+  static const String consumerKey =
+      String.fromEnvironment('CONSUMER_KEY', defaultValue: acf.consumerKey);
+  static const String consumerSecret = String.fromEnvironment('CONSUMER_SECRET',
+      defaultValue: acf.consumerSecret);
+  static const List<String> allowPathAuthenticationRestApiKeys = [
+    '/wc/v3/',
+    '/wc/v2/',
+    '/wc-appointments/v1/'
+  ];
 
   // receiveTimeout
   static const int receiveTimeout = 50000;
@@ -50,7 +57,8 @@ class Endpoints {
   static const String getBrands = "/wc/v2/products/brands";
 
   // Like video product
-  static const String likeProductVideo = "/app-builder-shopping-video-addons/v1/likes";
+  static const String likeProductVideo =
+      "/app-builder-shopping-video-addons/v1/likes";
 
   // App Builder API: ==================================================================================================
 

@@ -320,7 +320,6 @@ mixin _$ProductsStore on ProductsStoreBase, Store {
     CancelToken? token,
     Map<String, dynamic>? customQuery,
   }) {
-    // log("This is product list : " + getProducts().toString());
     return _$getProductsAsyncAction
         .run(() => super.getProducts(token: token, customQuery: customQuery));
   }

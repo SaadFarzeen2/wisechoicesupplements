@@ -25,7 +25,7 @@ class RequestHelper {
 
   Future<Map<String, dynamic>> getSettings() async {
     try {
-      log(Endpoints.getSettings);
+      // log(Endpoints.getSettings);
       final res = await _dioClient.get(Endpoints.getSettings);
 
       if (res is String) {

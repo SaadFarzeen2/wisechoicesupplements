@@ -48,17 +48,22 @@ class ProfileContentLogin extends ProfileContent {
           image: ClipRRect(
             borderRadius: BorderRadius.circular(30),
             child: CirillaCacheImage(
-              user?.socialAvatar?.isNotEmpty == true ? user!.socialAvatar : user?.avatar ?? '',
+              user?.socialAvatar?.isNotEmpty == true
+                  ? user!.socialAvatar
+                  : user?.avatar ?? '',
               width: 60,
               height: 60,
             ),
           ),
           title: Text(user!.displayName ?? "Admin",
-              style: theme.textTheme.titleSmall, maxLines: 1, overflow: TextOverflow.ellipsis),
+              style: theme.textTheme.titleSmall,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis),
           leading: Text(translate('welcome'), style: theme.textTheme.bodySmall),
           padding: paddingHorizontalLarge.add(paddingVerticalMedium),
           color: theme.colorScheme.surface,
-          onClick: () => Navigator.of(context).pushNamed(AccountScreen.routeName),
+          onClick: () =>
+              Navigator.of(context).pushNamed(AccountScreen.routeName),
         ),
         const SizedBox(height: 40),
         buildInfo(
@@ -67,48 +72,58 @@ class ProfileContentLogin extends ProfileContent {
           child: Column(
             children: [
               CirillaTile(
-                title: Text(translate('edit_account_my_account'), style: theme.textTheme.titleSmall),
+                title: Text(translate('edit_account_my_account'),
+                    style: theme.textTheme.titleSmall),
                 leading: const Icon(
                   FeatherIcons.user,
                   size: 16,
                 ),
-                onTap: () => Navigator.of(context).pushNamed(AccountScreen.routeName),
+                onTap: () =>
+                    Navigator.of(context).pushNamed(AccountScreen.routeName),
               ),
               CirillaTile(
-                title: Text(translate('order_return'), style: theme.textTheme.titleSmall),
+                title: Text(translate('order_return'),
+                    style: theme.textTheme.titleSmall),
                 leading: const Icon(
                   FeatherIcons.package,
                   size: 16,
                 ),
-                onTap: () => Navigator.of(context).pushNamed(OrderListScreen.routeName),
+                onTap: () =>
+                    Navigator.of(context).pushNamed(OrderListScreen.routeName),
               ),
               if (enableWallet)
                 CirillaTile(
-                  title: Text(translate('profile_wallet_txt'), style: theme.textTheme.titleSmall),
+                  title: Text(translate('profile_wallet_txt'),
+                      style: theme.textTheme.titleSmall),
                   leading: const Icon(
                     FeatherIcons.creditCard,
                     size: 16,
                   ),
                   trailing: const TextWallet(),
-                  onTap: () => Navigator.of(context).pushNamed(WalletScreen.routeName),
+                  onTap: () =>
+                      Navigator.of(context).pushNamed(WalletScreen.routeName),
                 ),
               if (enableDownload)
                 CirillaTile(
-                  title: Text(translate('download_title'), style: theme.textTheme.titleSmall),
+                  title: Text(translate('download_title'),
+                      style: theme.textTheme.titleSmall),
                   leading: const Icon(
                     FeatherIcons.download,
                     size: 16,
                   ),
-                  onTap: () => Navigator.of(context).pushNamed(DownloadScreen.routeName),
+                  onTap: () =>
+                      Navigator.of(context).pushNamed(DownloadScreen.routeName),
                 ),
               if (enableChat)
                 CirillaTile(
-                  title: Text(translate('chat'), style: theme.textTheme.titleSmall),
+                  title: Text(translate('chat'),
+                      style: theme.textTheme.titleSmall),
                   leading: const Icon(
                     FeatherIcons.messageCircle,
                     size: 16,
                   ),
-                  onTap: () => Navigator.of(context).pushNamed(ChatListScreen.routeName),
+                  onTap: () =>
+                      Navigator.of(context).pushNamed(ChatListScreen.routeName),
                 ),
             ],
           ),
@@ -120,34 +135,41 @@ class ProfileContentLogin extends ProfileContent {
           child: Column(
             children: [
               CirillaTile(
-                title: Text(translate('app_settings'), style: theme.textTheme.titleSmall),
+                title: Text(translate('app_settings'),
+                    style: theme.textTheme.titleSmall),
                 leading: const Icon(
                   FeatherIcons.settings,
                   size: 16,
                 ),
-                onTap: () => Navigator.of(context).pushNamed(SettingScreen.routeName),
+                onTap: () =>
+                    Navigator.of(context).pushNamed(SettingScreen.routeName),
               ),
               if (enableHelpInfo == true)
                 CirillaTile(
-                  title: Text(translate('help_info'), style: theme.textTheme.titleSmall),
+                  title: Text(translate('help_info'),
+                      style: theme.textTheme.titleSmall),
                   leading: const Icon(
                     FeatherIcons.info,
                     size: 16,
                   ),
-                  onTap: () => Navigator.of(context).pushNamed(HelpInfoScreen.routeName),
+                  onTap: () =>
+                      Navigator.of(context).pushNamed(HelpInfoScreen.routeName),
                 ),
               if (enablePhone!)
                 CirillaTile(
-                  title: Text(translate('hotline'), style: theme.textTheme.titleSmall),
+                  title: Text(translate('hotline'),
+                      style: theme.textTheme.titleSmall),
                   leading: const Icon(
                     FeatherIcons.phoneForwarded,
                     size: 16,
                   ),
-                  trailing: Text(phone!, style: theme.textTheme.bodyLarge),
-                  onTap: () => launch("tel://$phone"),
+                  trailing:
+                      Text('0917-140-5815', style: theme.textTheme.bodyLarge),
+                  onTap: () => launch("tel://0917-140-5815"),
                 ),
               CirillaTile(
-                title: Text(translate('sign_out'), style: theme.textTheme.titleSmall),
+                title: Text(translate('sign_out'),
+                    style: theme.textTheme.titleSmall),
                 leading: const Icon(
                   FeatherIcons.logOut,
                   size: 16,

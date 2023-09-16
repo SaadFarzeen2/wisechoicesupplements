@@ -137,7 +137,7 @@ class CartScreenState extends State<CartScreen>
 
     if (getConfig(settingStore, ['forceLoginCheckout'], false) &&
         !authStore.isLogin) {
-      log('asdfghjkl');
+      // log('asdfghjkl');
       Navigator.of(context).pushNamed(
         LoginScreen.routeName,
         arguments: {
@@ -148,11 +148,11 @@ class CartScreenState extends State<CartScreen>
       );
     } else {
       if (isWeb) {
-        log('1111112222222222333333344444');
+        // log('1111112222222222333333344444');
 
         _checkoutLaunch(context);
       } else {
-        log('0000000000000000000000000');
+        // log('0000000000000000000000000');
         log(getConfig(settingStore, ['customCheckout'], false).toString());
 
         Navigator.of(context).pushNamed(

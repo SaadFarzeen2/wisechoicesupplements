@@ -100,7 +100,7 @@ class DioClient {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      log("${Endpoints.restUrl}/$uri");
+      // log("${Endpoints.restUrl}/$uri");
 
       final Response response = await _dio.get(
         uri,

@@ -19,7 +19,8 @@ class CartChangeAddress extends StatefulWidget {
   State<CartChangeAddress> createState() => _CartChangeAddressState();
 }
 
-class _CartChangeAddressState extends State<CartChangeAddress> with SnackMixin, AppBarMixin {
+class _CartChangeAddressState extends State<CartChangeAddress>
+    with SnackMixin, AppBarMixin {
   late SettingStore _settingStore;
   late AddressDataStore _addressDataStore;
   CartStore? _cartStore;
@@ -29,7 +30,9 @@ class _CartChangeAddressState extends State<CartChangeAddress> with SnackMixin, 
     _settingStore = Provider.of<SettingStore>(context, listen: false);
     _cartStore = Provider.of<AuthStore>(context, listen: false).cartStore;
 
-    Map? destination = _cartStore?.cartData?.shippingRate?.elementAt(widget.index!).destination;
+    Map? destination = _cartStore?.cartData?.shippingRate
+        ?.elementAt(widget.index!)
+        .destination;
     String country = get(destination, ['country'], '');
     _addressDataStore = AddressDataStore(_settingStore.requestHelper)
       ..getAddressData(
@@ -44,7 +47,8 @@ class _CartChangeAddressState extends State<CartChangeAddress> with SnackMixin, 
   postAddressCart(Map data) async {
     TranslateType translate = AppLocalizations.of(context)!.translate;
     try {
-      await _cartStore!.updateCustomerCart(data: {'shipping_address': data, 'billing_address': data});
+      await _cartStore!.updateCustomerCart(
+          data: {'shipping_address': data, 'billing_address': data});
       if (mounted) showSuccess(context, translate('address_shipping_success'));
       if (mounted) Navigator.pop(context);
     } catch (e) {
@@ -56,7 +60,8 @@ class _CartChangeAddressState extends State<CartChangeAddress> with SnackMixin, 
     Map<String, dynamic> result = {};
 
     for (String key in data.keys) {
-      String defaultName = key.split('_').length > 1 ? key.split('_').sublist(1).join('_') : key;
+      String defaultName =
+          key.split('_').length > 1 ? key.split('_').sublist(1).join('_') : key;
       String name = get(data, [key, 'name'], defaultName);
       if (_showFields.contains(name)) {
         result[key] = data[key];
@@ -68,7 +73,9 @@ class _CartChangeAddressState extends State<CartChangeAddress> with SnackMixin, 
   @override
   Widget build(BuildContext context) {
     return Observer(builder: (_) {
-      Map? destination = _cartStore?.cartData?.shippingRate?.elementAt(widget.index!).destination;
+      Map? destination = _cartStore?.cartData?.shippingRate
+          ?.elementAt(widget.index!)
+          .destination;
 
       TranslateType translate = AppLocalizations.of(context)!.translate;
 
@@ -79,7 +86,8 @@ class _CartChangeAddressState extends State<CartChangeAddress> with SnackMixin, 
           body: getFields(_addressDataStore.address?.shipping ?? {}).isNotEmpty
               ? AddressChild(
                   address: destination as Map<String, dynamic>?,
-                  addressFields: getFields(_addressDataStore.address?.shipping ?? {}),
+                  addressFields:
+                      getFields(_addressDataStore.address?.shipping ?? {}),
                   addressDataStore: _addressDataStore,
                   onSave: postAddressCart,
                   titleModal: Text(

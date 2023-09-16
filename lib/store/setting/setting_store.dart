@@ -235,7 +235,7 @@ abstract class SettingStoreBase with Store {
     String? persistSettings = _persistHelper.getSettings();
     try {
       Map<String, dynamic> settings = await _requestHelper.getSettings();
-      log(settings.toString());
+      // log(settings.toString());
 
       String json = jsonEncode(settings);
       if (persistSettings != json) {

@@ -12,25 +12,35 @@ mixin _$BrandStore on BrandStoreBase, Store {
   Computed<bool>? _$loadingComputed;
 
   @override
-  bool get loading => (_$loadingComputed ??= Computed<bool>(() => super.loading, name: '_BrandStore.loading')).value;
+  bool get loading => (_$loadingComputed ??=
+          Computed<bool>(() => super.loading, name: '_BrandStore.loading'))
+      .value;
   Computed<int>? _$nextPageComputed;
 
   @override
-  int get nextPage => (_$nextPageComputed ??= Computed<int>(() => super.nextPage, name: '_BrandStore.nextPage')).value;
+  int get nextPage => (_$nextPageComputed ??=
+          Computed<int>(() => super.nextPage, name: '_BrandStore.nextPage'))
+      .value;
   Computed<ObservableList<Brand>>? _$brandsComputed;
 
   @override
   ObservableList<Brand> get brands =>
-      (_$brandsComputed ??= Computed<ObservableList<Brand>>(() => super.brands, name: '_BrandStore.brands')).value;
+      (_$brandsComputed ??= Computed<ObservableList<Brand>>(() => super.brands,
+              name: '_BrandStore.brands'))
+          .value;
   Computed<bool>? _$canLoadMoreComputed;
 
   @override
   bool get canLoadMore =>
-      (_$canLoadMoreComputed ??= Computed<bool>(() => super.canLoadMore, name: '_BrandStore.canLoadMore')).value;
+      (_$canLoadMoreComputed ??= Computed<bool>(() => super.canLoadMore,
+              name: '_BrandStore.canLoadMore'))
+          .value;
   Computed<int>? _$perPageComputed;
 
   @override
-  int get perPage => (_$perPageComputed ??= Computed<int>(() => super.perPage, name: '_BrandStore.perPage')).value;
+  int get perPage => (_$perPageComputed ??=
+          Computed<int>(() => super.perPage, name: '_BrandStore.perPage'))
+      .value;
 
   final _$fetchBrandsFutureAtom = Atom(name: '_BrandStore.fetchBrandsFuture');
 
@@ -115,17 +125,18 @@ mixin _$BrandStore on BrandStoreBase, Store {
   }
 
   final _$getBrandAsyncAction = AsyncAction('_BrandStore.getBrand');
-
   @override
   Future<Brand> getBrand({required int id, CancelToken? token}) {
-    return _$getBrandAsyncAction.run(() => super.getBrand(id: id, token: token));
+    return _$getBrandAsyncAction
+        .run(() => super.getBrand(id: id, token: token));
   }
 
   final _$_BrandStoreActionController = ActionController(name: '_BrandStore');
 
   @override
   Future<void> refresh() {
-    final $actionInfo = _$_BrandStoreActionController.startAction(name: '_BrandStore.refresh');
+    final $actionInfo =
+        _$_BrandStoreActionController.startAction(name: '_BrandStore.refresh');
     try {
       return super.refresh();
     } finally {

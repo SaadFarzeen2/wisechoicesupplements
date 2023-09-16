@@ -1,8 +1,8 @@
 const String baseUrl = 'https://mobile.wisechoicesupplements.ph/';
 
-const String consumerKey = 'ck_10d15dd9f80b74c5f3c2ea8229ea4b06ff927678';
+const String consumerKey = 'ck_d90b97b8bfc41615381d4ed89a140fb594ce3166';
 
-const String consumerSecret = 'cs_926abb7bc0f45b8da2314e4b8c52c1433cfc8749';
+const String consumerSecret = 'cs_34683ac9b07e360382f05a7f76064d954b45b670';
 
 const String restPrefix = 'wp-json';
 

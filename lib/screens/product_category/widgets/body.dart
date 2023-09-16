@@ -50,7 +50,8 @@ abstract class Body extends StatefulWidget with Utility {
   Widget? buildAppBar(BuildContext context, {Map<String, dynamic>? configs});
 
   // Build Banner
-  Widget? buildBanner(BuildContext context, {Map<String, dynamic>? configs, String? languageKey});
+  Widget? buildBanner(BuildContext context,
+      {Map<String, dynamic>? configs, String? languageKey});
 
   // Builder Layout Tabs
   Widget buildTabs(
@@ -72,7 +73,8 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, length: widget.categories!.length);
+    _tabController =
+        TabController(vsync: this, length: widget.categories!.length);
   }
 
   void _onChanged(index) {
@@ -118,7 +120,8 @@ class SearchProductWidget extends StatelessWidget {
     TranslateType translate = AppLocalizations.of(context)!.translate;
     return Search(
       icon: const Icon(FeatherIcons.search, size: 16),
-      label: Text(translate('product_category_search'), style: theme.textTheme.bodyMedium),
+      label: Text(translate('product_category_search'),
+          style: theme.textTheme.bodyMedium),
       shape: RoundedRectangleBorder(
         borderRadius: borderRadius,
         side: BorderSide(width: 1, color: theme.dividerColor),
@@ -146,10 +149,14 @@ class BannerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String? imageBanner = ConvertData.imageFromConfigs(get(configs, ['imageBanner'], ''), languageKey);
-    double? widthBanner = ConvertData.stringToDouble(get(configs, ['widthBanner'], 335));
-    double? heightBanner = ConvertData.stringToDouble(get(configs, ['heightBanner'], 80));
-    double? radiusBanner = ConvertData.stringToDouble(get(configs, ['radiusBanner'], 8));
+    String? imageBanner = ConvertData.imageFromConfigs(
+        get(configs, ['imageBanner'], ''), languageKey);
+    double? widthBanner =
+        ConvertData.stringToDouble(get(configs, ['widthBanner'], 335));
+    double? heightBanner =
+        ConvertData.stringToDouble(get(configs, ['heightBanner'], 80));
+    double? radiusBanner =
+        ConvertData.stringToDouble(get(configs, ['radiusBanner'], 8));
 
     return LayoutBuilder(
       builder: (_, BoxConstraints constraints) {

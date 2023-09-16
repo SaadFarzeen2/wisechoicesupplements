@@ -53,7 +53,8 @@ class ProfileContentLogout extends ProfileContent with GeneralMixin {
                 child: SizedBox(
                   height: 48,
                   child: ElevatedButton(
-                    onPressed: () => Navigator.of(context).pushNamed(RegisterScreen.routeName),
+                    onPressed: () => Navigator.of(context)
+                        .pushNamed(RegisterScreen.routeName),
                     style: ElevatedButton.styleFrom(
                       textStyle: theme.textTheme.titleSmall,
                     ),
@@ -69,8 +70,9 @@ class ProfileContentLogout extends ProfileContent with GeneralMixin {
               child: SizedBox(
                 height: 48,
                 child: ElevatedButton(
-                  onPressed: () =>
-                      Navigator.of(context).pushNamed(LoginScreen.routeName, arguments: {'showMessage': showMessage}),
+                  onPressed: () => Navigator.of(context).pushNamed(
+                      LoginScreen.routeName,
+                      arguments: {'showMessage': showMessage}),
                   style: ElevatedButton.styleFrom(
                     textStyle: theme.textTheme.titleSmall,
                   ),
@@ -89,31 +91,37 @@ class ProfileContentLogout extends ProfileContent with GeneralMixin {
           child: Column(
             children: [
               CirillaTile(
-                title: Text(translate('app_settings'), style: theme.textTheme.titleSmall),
+                title: Text(translate('app_settings'),
+                    style: theme.textTheme.titleSmall),
                 leading: const Icon(
                   FeatherIcons.settings,
                   size: 16,
                 ),
-                onTap: () => Navigator.of(context).pushNamed(SettingScreen.routeName),
+                onTap: () =>
+                    Navigator.of(context).pushNamed(SettingScreen.routeName),
               ),
               if (enableHelpInfo == true)
                 CirillaTile(
-                  title: Text(translate('help_info'), style: theme.textTheme.titleSmall),
+                  title: Text(translate('help_info'),
+                      style: theme.textTheme.titleSmall),
                   leading: const Icon(
                     FeatherIcons.info,
                     size: 16,
                   ),
-                  onTap: () => Navigator.of(context).pushNamed(HelpInfoScreen.routeName),
+                  onTap: () =>
+                      Navigator.of(context).pushNamed(HelpInfoScreen.routeName),
                 ),
               if (enablePhone!)
                 CirillaTile(
-                  title: Text(translate('hotline'), style: theme.textTheme.titleSmall),
+                  title: Text(translate('hotline'),
+                      style: theme.textTheme.titleSmall),
                   leading: const Icon(
                     FeatherIcons.phoneForwarded,
                     size: 16,
                   ),
-                  trailing: Text(phone!, style: theme.textTheme.bodyLarge),
-                  onTap: () => launch("tel://$phone"),
+                  trailing:
+                      Text('0917-140-5815', style: theme.textTheme.bodyLarge),
+                  onTap: () => launch("tel://0917-140-5815"),
                 ),
             ],
           ),

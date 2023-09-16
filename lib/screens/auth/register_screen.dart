@@ -35,7 +35,8 @@ class RegisterScreen extends StatefulWidget {
   State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> with AppBarMixin, LoadingMixin, SnackMixin, Utility {
+class _RegisterScreenState extends State<RegisterScreen>
+    with AppBarMixin, LoadingMixin, SnackMixin, Utility {
   AuthStore? _authStore;
 
   @override
@@ -47,7 +48,8 @@ class _RegisterScreenState extends State<RegisterScreen> with AppBarMixin, Loadi
   void _handleLogin(Map<String, dynamic> queryParameters) async {
     try {
       await _authStore!.loginStore.login(queryParameters);
-      if (mounted) Navigator.popUntil(context, ModalRoute.withName(HomeScreen.routeName));
+      if (mounted)
+        Navigator.popUntil(context, ModalRoute.withName(HomeScreen.routeName));
     } catch (e) {
       showError(context, e);
     }
@@ -56,7 +58,8 @@ class _RegisterScreenState extends State<RegisterScreen> with AppBarMixin, Loadi
   void _handleRegister(Map<String, dynamic> queryParameters) async {
     try {
       await _authStore!.registerStore.register(queryParameters);
-      if (mounted) Navigator.popUntil(context, ModalRoute.withName(HomeScreen.routeName));
+      if (mounted)
+        Navigator.popUntil(context, ModalRoute.withName(HomeScreen.routeName));
     } catch (e) {
       showError(context, e);
     }
@@ -64,27 +67,34 @@ class _RegisterScreenState extends State<RegisterScreen> with AppBarMixin, Loadi
 
   @override
   Widget build(BuildContext context) {
-    if (widget.store!.data == null || widget.store!.data!.screens!['register'] == null) return Container();
+    if (widget.store!.data == null ||
+        widget.store!.data!.screens!['register'] == null) return Container();
 
-    WidgetConfig widgetConfig = widget.store!.data!.screens!['register']!.widgets!['register']!;
+    WidgetConfig widgetConfig =
+        widget.store!.data!.screens!['register']!.widgets!['register']!;
     TranslateType translate = AppLocalizations.of(context)!.translate;
 
     // Get configs
-    Map<String, dynamic>? configsRegister = widget.store!.data!.screens!['register']!.configs;
-    Color appbarColor =
-        ConvertData.fromRGBA(get(configsRegister, ['appbarColor', widget.store!.themeModeKey]), Colors.white);
-    bool extendBodyBehindAppBar = get(configsRegister, ['extendBodyBehindAppBar'], false);
+    Map<String, dynamic>? configsRegister =
+        widget.store!.data!.screens!['register']!.configs;
+    Color appbarColor = ConvertData.fromRGBA(
+        get(configsRegister, ['appbarColor', widget.store!.themeModeKey]),
+        Colors.white);
+    bool extendBodyBehindAppBar =
+        get(configsRegister, ['extendBodyBehindAppBar'], false);
 
     // Get fields
     Map<String, dynamic> fields = widgetConfig.fields ?? {};
     bool titleAppBar = get(fields, ['titleAppBar'], false);
     bool enableEmail = get(fields, ['enableEmail'], true);
-    String? initCountryCode = get(fields, ['codeCountry', widget.store!.languageKey], '');
+    String? initCountryCode =
+        get(fields, ['codeCountry', widget.store!.languageKey], '');
 
     // Get styles
     Map<String, dynamic>? stylesRegister = widgetConfig.styles;
-    Color background =
-        ConvertData.fromRGBA(get(stylesRegister, ['background', widget.store!.themeModeKey]), Colors.white);
+    Color background = ConvertData.fromRGBA(
+        get(stylesRegister, ['background', widget.store!.themeModeKey]),
+        Colors.white);
 
     // Layout
     String layout = widgetConfig.layout ?? Strings.loginLayoutSocialTop;
@@ -95,13 +105,15 @@ class _RegisterScreenState extends State<RegisterScreen> with AppBarMixin, Loadi
         backgroundColor: appbarColor,
         title: titleAppBar ? Text(translate('register_app_bar_title')) : null,
         elevation: 0,
+        centerTitle: true,
         leading: leading(),
       ),
       body: Observer(
         builder: (_) {
           return Stack(
             children: [
-              buildLayout(layout, initCountryCode, enableEmail, widgetConfig, background, translate),
+              buildLayout(layout, initCountryCode, enableEmail, widgetConfig,
+                  background, translate),
               if (_authStore!.registerStore.loading)
                 Align(
                   alignment: FractionalOffset.center,
@@ -122,15 +134,20 @@ class _RegisterScreenState extends State<RegisterScreen> with AppBarMixin, Loadi
     Color background,
     TranslateType translate,
   ) {
-    String? headerImage = get(widgetConfig.styles, ['headerImage', 'src'], Assets.noImageUrl);
-    EdgeInsetsDirectional padding = ConvertData.space(get(widgetConfig.styles, ['padding']));
+    String? headerImage =
+        get(widgetConfig.styles, ['headerImage', 'src'], Assets.noImageUrl);
+    EdgeInsetsDirectional padding =
+        ConvertData.space(get(widgetConfig.styles, ['padding']));
 
-    bool? registerFacebook = get(widgetConfig.fields, ['registerFacebook'], true);
+    bool? registerFacebook =
+        get(widgetConfig.fields, ['registerFacebook'], true);
     bool? registerGoogle = get(widgetConfig.fields, ['registerGoogle'], true);
     bool? registerApple = get(widgetConfig.fields, ['registerApple'], true);
-    bool? registerPhoneNumber = get(widgetConfig.fields, ['registerPhoneNumber'], true);
+    bool? registerPhoneNumber =
+        get(widgetConfig.fields, ['registerPhoneNumber'], true);
 
-    String? term = get(widgetConfig.fields, ['term', widget.store!.languageKey], '');
+    String? term =
+        get(widgetConfig.fields, ['term', widget.store!.languageKey], '');
 
     Map<String, bool?> enable = {
       'facebook': registerFacebook,
@@ -153,12 +170,15 @@ class _RegisterScreenState extends State<RegisterScreen> with AppBarMixin, Loadi
       initCountryCode: initCountryCode,
       enableEmail: enableEmail,
     );
-    EdgeInsetsDirectional paddingFooter = const EdgeInsetsDirectional.only(top: 24, bottom: 24, start: 20, end: 20);
+    EdgeInsetsDirectional paddingFooter = const EdgeInsetsDirectional.only(
+        top: 24, bottom: 24, start: 20, end: 20);
 
     switch (layout) {
       case Strings.loginLayoutLogoTop:
         return RegisterScreenLogoTop(
-          header: headerImage != "" ? Image.network(headerImage!, height: 48) : Container(),
+          header: headerImage != ""
+              ? Image.network(headerImage!, height: 48)
+              : Container(),
           registerForm: registerForm,
           socialLogin: social,
           loginText: const _TextLogin(),
@@ -205,7 +225,8 @@ class _RegisterScreenState extends State<RegisterScreen> with AppBarMixin, Loadi
         return RegisterScreenSocialTop(
           padding: padding,
           paddingFooter: paddingFooter,
-          header: HeadingText.animated(title: translate('login_txt_register'), enable: enable),
+          header: HeadingText.animated(
+              title: translate('login_txt_register'), enable: enable),
           registerForm: registerForm,
           socialLogin: SocialLogin(
             store: _authStore!.loginStore,

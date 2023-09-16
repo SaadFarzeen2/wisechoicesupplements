@@ -21,8 +21,8 @@ class _CartTotalState extends State<CartTotal> {
   @override
   void initState() {
     // TODO: implement initState
-    log(widget.cartData.totals.toString());
-    log(widget.cartData.shippingRate!.elementAt(0).shipItem.toString());
+    // log(widget.cartData.totals.toString());
+    // log(widget.cartData.shippingRate!.elementAt(0).shipItem.toString());
     super.initState();
   }
 
@@ -33,7 +33,7 @@ class _CartTotalState extends State<CartTotal> {
     String? subTax = get(widget.cartData.totals, ['total_tax'], '0');
     String? discount = get(widget.cartData.totals, ['total_fees'], '0');
 
-    log(" ffff " + discount.toString());
+    // log(" ffff " + discount.toString());
     String? totalPrice = get(widget.cartData.totals, ['total_price'], '0');
 
     int? unit = get(widget.cartData.totals, ['currency_minor_unit'], 0);
@@ -90,7 +90,7 @@ class _CartTotalState extends State<CartTotal> {
                 bool selected = get(dataShipInfo.selected, [], '');
 
                 String? currencyCode = get(dataShipInfo.currencyCode, [], '');
-                log('message $index  $selected');
+                // log('message $index  $selected');
                 return selected
                     ? buildCartTotal(
                         title: StringParse(translate(name)).unescape,
@@ -133,7 +133,7 @@ Widget buildCartTotal(
     required String title,
     required String price,
     TextStyle? style}) {
-  log('   $title  $price');
+  // log('   $title  $price');
 
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
